@@ -3,11 +3,11 @@
 
 ## Preview
 
-[https://www.youtube.com/watch?v=2nlrVU-w7KI](https://www.youtube.com/watch?v=hSvjYPHLr0U)
+https://www.youtube.com/watch?v=hSvjYPHLr0U
 
 ## What is this?
    
-<p>This is a multi-framework payment system</p>
+<p>This is a multi-framework payment system.</p>
 
 <p>It's a great fit for any type of roleplaying server, whether it's Serious RP or not.</p>
 
@@ -23,7 +23,7 @@ With this resource, you will be able to do the following:
 
 - ESX 1.1+ & Legacy
 - QBCore
-- Standalone
+- Standalone (Code your own bridge)
 
 ## What do I need?
 
@@ -34,6 +34,7 @@ Use a supported framework or make it work with yours via the bridge folder.
 ## Installation
 
 <p>Start ox_lib before pickle_payment.</p>
+<p>Add your registers in the config.lua.</p>
 
 ## Need Support?
 
@@ -43,5 +44,5 @@ Use a supported framework or make it work with yours via the bridge folder.
 
 <p>Do not at any point redistribute this without my permission and credit.</p>
 <p>I've already had to issue reports on people selling my Television Script (which is free).</p>
-<p>That is not fair anyone, especially to the people who get scammed out of their money.</p>
+<p>That is not fair to anyone, especially to the people who get scammed out of their money.</p>
 <p>So please, respect the rules and have fun!</p>
