@@ -7,10 +7,10 @@ Config.Language = "en"
 Config.Registers = {
     {
         Title = "Ammunation",
-        AllowedGroups = {["police"] = 0},
+        AllowedGroups = {["ammunation"] = 0},
         Payment = {
             Type = "player",
-            Society = "police"
+            Society = "ammunation"
         },
         Coords = vector3(23.8267, -1105.9731, 29.7970),
     }
