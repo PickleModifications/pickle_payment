@@ -1,0 +1,295 @@
+@font-face {
+    font-family: Arimo;
+    src: url(assets/fonts/Arimo-Regular.ttf);
+}
+
+@font-face {
+    font-family: ArimoBold;
+    src: url(assets/fonts/Arimo-Bold.ttf);
+}
+  
+body {
+    font-family: Arimo;
+    /* background-color: rgb(36, 36, 36); */
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(187, 187, 187);
+}
+
+/* Billing App */
+
+#app-billing {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 60vh;
+    background-color: white;
+    flex-direction: column;
+}
+
+#ab-rejectbill, #ar-rejectbill {
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin: 1vw;
+}
+#ab-rejectbill, #ar-rejectbill {
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin: 1vw;
+    cursor: pointer;
+    color: black;
+    transition: 0.25s;
+}
+
+#ab-rejectbill:hover, #ar-rejectbill:hover {
+    color: rgb(255, 0, 0);
+    transition: 0.25s;
+}
+
+#ab-top, #ar-top {
+    display: flex;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#ab-middle {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    overflow-y: scroll;
+}
+
+.ab-item {
+    display:  flex;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-bottom: 1px  solid rgb(187, 187, 187);
+    align-items: center;
+}
+
+.ab-item:last-child {
+    border-bottom: unset;
+}
+
+.ab-item > div:last-child {
+    margin-left: auto;
+}
+
+.ab-edit-display {
+    display:  flex;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-bottom: 1px  solid rgb(187, 187, 187);
+    align-items: center;
+}
+
+.ab-edit-display:last-child {
+    border-bottom: unset;
+}
+
+.ab-edit-display > div:not(:first-child) {
+    margin-left: auto;
+}
+
+.ab-input {
+    display:  flex;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    align-items: center;
+    margin-left: auto;
+}
+
+.ab-input > div:not(.ab-input-options) {
+}
+
+.ab-input > div:not(.ab-input-options) > input {
+    width: 6vw;
+}
+
+.ab-input-options {
+    display: flex;
+    margin-left: auto;
+}
+
+.ab-input-options > i:not(:first-child) {
+    margin-left: 1vw;
+}
+
+.ab-input-button {
+    margin-top: 1vh;
+    text-align: center;
+}
+
+#ab-bottom {
+    margin-top: auto;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: rgb(240, 240, 240);
+}
+
+#ab-bottom > div {
+    display:  flex;
+    padding-bottom: 1vh;
+    justify-content: center;
+}
+
+.ab-button, .ab-input-button {
+    width: 100%;
+    background-color: rgb(16, 177, 16);
+    border-radius: 10vw;
+    color: white;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.ab-button:hover, .ab-input-button:hover {
+    background-color: rgb(13, 128, 13);
+    transition: 0.25s;
+}
+
+/* Receipt App */
+
+#app-receipt {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 60vh;
+    background-color: white;
+    flex-direction: column;
+}
+
+#ar-middle {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    overflow-y: scroll;
+}
+
+.ar-item {
+    display:  flex;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-bottom: 1px  solid rgb(187, 187, 187);
+    align-items: center;
+}
+
+.ar-item:last-child {
+    border-bottom: unset;
+}
+
+.ar-item > div:last-child {
+    margin-left: auto;
+}
+
+.ar-edit-display {
+    display:  flex;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    border-bottom: 1px  solid rgb(187, 187, 187);
+    align-items: center;
+}
+
+.ar-edit-display:last-child {
+    border-bottom: unset;
+}
+
+.ar-edit-display > div:not(:first-child) {
+    margin-left: auto;
+}
+
+.ar-input {
+    display:  flex;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    align-items: center;
+    margin-left: auto;
+}
+
+.ar-input > div:not(.ar-input-options) {
+}
+
+.ar-input > div:not(.ar-input-options) > input {
+    width: 6vw;
+}
+
+.ar-input-options {
+    display: flex;
+    margin-left: auto;
+}
+
+.ar-input-options > i:not(:first-child) {
+    margin-left: 1vw;
+}
+
+.ar-input-button {
+    margin-top: 1vh;
+    text-align: center;
+}
+
+#ar-bottom {
+    margin-top: auto;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#ar-bottom > div {
+    display:  flex;
+    padding-bottom: 1vh;
+    justify-content: center;
+}
+
+.ar-button, .ar-input-button {
+    width: 100%;
+    background-color: rgb(16, 177, 16);
+    border-radius: 10vw;
+    color: white;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.ar-button:hover, .ar-input-button:hover {
+    background-color: rgb(13, 128, 13);
+    transition: 0.25s;
+}
