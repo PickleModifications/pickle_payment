@@ -12,10 +12,10 @@ end
 
 function Search(source, name)
     local xPlayer = QBCore.Functions.GetPlayer(source)
-    if (name == "money") then
+    if (name == "cash") then
         return xPlayer.PlayerData.money['cash']
     elseif (name == "bank") then
-        return xPlayer.PlayerData.money['cash'] -- If anyone knows how to get bank balance for QBCore, let me know.
+        return xPlayer.PlayerData.money['bank'] -- If anyone knows how to get bank balance for QBCore, let me know.
     else
         local item = xPlayer.Functions.GetItemByName(name)
         if item ~= nil then 
@@ -28,10 +28,10 @@ end
 
 function AddItem(source, name, amount)
     local xPlayer = QBCore.Functions.GetPlayer(source)
-    if (name == "money") then
+    if (name == "cash") then
         return xPlayer.Functions.AddMoney("cash", amount)
     elseif (name == "bank") then
-        return xPlayer.Functions.AddMoney("cash", amount) -- If anyone knows how to add to bank balance for QBCore, let me know.
+        return xPlayer.Functions.AddMoney("bank", amount) -- If anyone knows how to add to bank balance for QBCore, let me know.
     else
         return xPlayer.Functions.AddItem(name, amount)
     end
@@ -39,10 +39,10 @@ end
 
 function RemoveItem(source, name, amount)
     local xPlayer = QBCore.Functions.GetPlayer(source)
-    if (name == "money") then
+    if (name == "cash") then
         return xPlayer.Functions.RemoveMoney("cash", amount)
     elseif (name == "bank") then
-        return xPlayer.Functions.RemoveMoney("cash", amount) -- If anyone knows how to remove from bank balance for QBCore, let me know.
+        return xPlayer.Functions.RemoveMoney("bank", amount) -- If anyone knows how to remove from bank balance for QBCore, let me know.
     else
         return xPlayer.Functions.RemoveItem(name, amount)
     end
@@ -63,9 +63,9 @@ function GetIdentifier(source)
 end
 
 function AttemptTransaction(paymentCFG, data)
-    local targetMoney = Search(data.target, "money")
+    local targetMoney = Search(data.target, "cash")
     local targetBank = Search(data.target, "bank")
-    local paymentMethod = "money"
+    local paymentMethod = "cash"
     local bill = data.bill
     if targetMoney - bill.price < 0 then 
         if targetBank - bill.price >= 0 then 
@@ -75,8 +75,8 @@ function AttemptTransaction(paymentCFG, data)
         end
     end
     if (paymentCFG.Type == "society") then 
-        if paymentMethod == "money" then 
-            RemoveItem(data.target, "money", bill.price)
+        if paymentMethod == "cash" then 
+            RemoveItem(data.target, "cash", bill.price)
             exports["qb-management"]:AddMoney(paymentCFG.Society, bill.price)
         elseif paymentMethod == "bank" then 
             RemoveItem(data.target, "bank", bill.price)
@@ -84,9 +84,9 @@ function AttemptTransaction(paymentCFG, data)
         end
         return true, _L("success_target", bill.price, _L("payment_method_".. paymentMethod), data.cashier), _L("success_source", bill.price, _L("payment_method_".. paymentMethod), data.target)
     elseif (paymentCFG.Type == "player") then
-        if paymentMethod == "money" then 
-            RemoveItem(data.target, "money", bill.price)
-            AddItem(data.cashier, "money", bill.price)
+        if paymentMethod == "cash" then 
+            RemoveItem(data.target, "cash", bill.price)
+            AddItem(data.cashier, "cash", bill.price)
         elseif paymentMethod == "bank" then 
             RemoveItem(data.target, "bank", bill.price)
             AddItem(data.cashier, "bank", bill.price)
